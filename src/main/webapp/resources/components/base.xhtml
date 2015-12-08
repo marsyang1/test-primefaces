@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:h="http://java.sun.com/jsf/html"
+        >
+
+<cc:interface>
+    <cc:clientBehavior name="update" event="action" targets="#{cc.clientId}:form:submit" default="true"/>
+</cc:interface>
+
+<cc:implementation>
+    <h:form id="form">
+        // ... some basic content
+        <h:commandButton type="submit" id="submit" value="update" action="#{testCompView.settingText()}"/>
+    </h:form>
+</cc:implementation>
+</html>

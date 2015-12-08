@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:util="http://java.sun.com/jsf/composite/util">
+   <h:head>
+      <h:outputStylesheet library="css" name="styles.css"/>
+      <title>#{msgs.windowTitle}</title>
+   </h:head>
+   
+   <h:body> 
+      <h:outputStylesheet library="css" name="styles.css"/>
+      
+      <h:outputText value="#{msgs.fontSizeHeading}"
+        style="padding-left: 30px; font-size: 2em;"/>
+      
+      <h:panelGrid columns="3" style="padding-left: 80px;">
+        <util:icon id="minus" image="#{resource['images:minus.gif']}">
+          <f:actionListener for="link" type="com.clarity.FontSelectionListener"/>
+        </util:icon>
+
+        <util:icon id="plus" image="#{resource['images:plus.gif']}">
+          <f:actionListener for="link" type="com.clarity.FontSelectionListener"/>
+        </util:icon>
+        
+        <h:outputText id="readout" value="#{fontSettings.size}em"/>
+      </h:panelGrid>
+            
+      <h:outputText id="fontPreview" value="Aa" 
+                 style="font-size: #{fontSettings.size}em; font-style: italic"/>
+
+   </h:body>
+</html>
