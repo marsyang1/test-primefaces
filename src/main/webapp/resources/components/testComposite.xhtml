@@ -3,21 +3,17 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:cc="http://xmlns.jcp.org/jsf/composite"
-      xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html"
         >
 
 <cc:interface>
-    <cc:attribute name="value" type="java.lang.String" required="true"/>
-    <cc:actionSource name="1234" targets="#{cc.clientId}:test2:tButtonAction"/>
-    <cc:clientBehavior name="oncomplete" default="true"
-                              event="oncomplete" targets="#{cc.clientId}:test2:tButtonAction"/>
+    <cc:clientBehavior name="update"
+                       event="action" targets="#{cc.clientId}:test2:tButtonAction"/>
 </cc:interface>
 
 <cc:implementation>
     <h:form id="test2">
-        <p:commandButton id="tButtonAction" value="確認" icon="ui-icon-newwin">
-            <f:setPropertyActionListener value="已確認" target="#{cc.attrs.value}"/>
-        </p:commandButton>
+        <p:commandButton id="tButtonAction" value="確認" icon="ui-icon-newwin"/>
     </h:form>
 </cc:implementation>
 </html>
