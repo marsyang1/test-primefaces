@@ -40,12 +40,12 @@
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center">
-                    Welcome to PrimeFaces
-                    <h:panelGrid columns="4" cellpadding="5">
+                    Test composite component 2 , composite component in the same Form
+                    <h:panelGrid columns="5" cellpadding="5">
                         <h:outputLabel for="name" value="Name:" style="font-weight:bold"/>
                         <p:inputText id="name" value="#{basicView.text}"/>
                         <p:commandButton value="Submit" update="display" icon="ui-icon-check"/>
-                        <m:testComposite update=":myform:display"/>
+                        <m:testComposite2 update="@form:display"/>
                         <h:outputText id="display" value="#{basicView.text}"/>
                     </h:panelGrid>
                 </p:layoutUnit>

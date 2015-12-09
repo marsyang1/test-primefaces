@@ -15,42 +15,43 @@
     </h:head>
 
     <h:body>
+        <h:form id="myform" prependId="false">
+            <p:layout fullPage="true">
 
-        <p:layout fullPage="true">
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    Header
+                </p:layoutUnit>
 
-            <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
-                Header
-            </p:layoutUnit>
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    Footer
+                </p:layoutUnit>
 
-            <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
-                Footer
-            </p:layoutUnit>
+                <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Resources">
+                            <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf"/>
+                            <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html"/>
+                            <p:menuitem value="Forum" url="http://forum.primefaces.org/"/>
+                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html"/>
 
-            <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
-                <p:menu>
-                    <p:submenu label="Resources">
-                        <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf"/>
-                        <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html"/>
-                        <p:menuitem value="Forum" url="http://forum.primefaces.org/"/>
-                        <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html"/>
+                        </p:submenu>
 
-                    </p:submenu>
+                    </p:menu>
+                </p:layoutUnit>
 
-                </p:menu>
-            </p:layoutUnit>
+                <p:layoutUnit position="center">
+                    Test composite component 2 , composite component in the same Form
+                    <h:panelGrid columns="5" cellpadding="5">
+                        <h:outputLabel for="name" value="Name:" style="font-weight:bold"/>
+                        <p:inputText id="name" value="#{basicView.text}"/>
+                        <p:commandButton value="Submit" update="display" icon="ui-icon-check"/>
+                        <m:testComposite2 update="display"/>
+                        <h:outputText id="display" value="#{basicView.text}"/>
+                    </h:panelGrid>
+                </p:layoutUnit>
 
-            <p:layoutUnit position="center">
-                Welcome to PrimeFaces
-                <h:form id="myform">
-                    <m:base>
-                        <f:ajax event="update" render=":myform:test1"/>
-                    </m:base>
-                    <p:inputText id="test1" value="#{testCompView.test}"/>
-                </h:form>
-            </p:layoutUnit>
-
-        </p:layout>
-
+            </p:layout>
+        </h:form>
     </h:body>
 
 </f:view>

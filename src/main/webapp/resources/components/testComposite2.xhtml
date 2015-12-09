@@ -3,18 +3,14 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:cc="http://xmlns.jcp.org/jsf/composite"
-      xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
         >
 
 <cc:interface>
-    <cc:clientBehavior name="update2"
-                       event="action" targets="#{cc.clientId}:test2:tButtonAction"/>
     <cc:attribute name="update" type="java.lang.String"/>
 </cc:interface>
 
 <cc:implementation>
-    <h:form id="test2">
-        <p:commandButton id="tButtonAction" value="確認" icon="ui-icon-newwin" update="#{cc.attrs.update}"/>
-    </h:form>
+    <p:commandButton id="tButtonAction" value="確認" icon="ui-icon-newwin" update="#{cc.attrs.update}"/>
 </cc:implementation>
 </html>
